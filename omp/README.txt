@@ -1,1 +1,1 @@
-teste fe hello pelo omp
+teste de hello pelo omp
