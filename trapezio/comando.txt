@@ -1,0 +1,1 @@
+gcc {nome arq} -o {nome exec} -fopenmp -lm
