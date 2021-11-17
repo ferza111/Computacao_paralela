@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 
 void Tartaruga (int n, double* global_result_p)
 {
-	int i,j,l;
+	int i,j,l,m,k;
 	double my_result,h;
 	int my_rank = omp_get_thread_num();
 	int thread_count = omp_get_num_threads();
@@ -44,7 +44,7 @@ void Tartaruga (int n, double* global_result_p)
 	{
 	 for(i = my_rank; i<k+m; i++)
 	 {
-	   h = (double)i
+	   h = (double)i;
 	   my_result = my_result+(1/h);
 	 }
 	}
@@ -52,7 +52,7 @@ void Tartaruga (int n, double* global_result_p)
 	{
 	 for(i = my_rank; i<k; i++)
 	 {
-	   h = (double)i
+	   h = (double)i;
 	   my_result = my_result+(1/h);
 	 }
 	}
