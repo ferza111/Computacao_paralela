@@ -6,6 +6,7 @@ void Tartaruga(int n, double* global_result_p);
 
 int main(int argc, char* argv[])
 {
+	double global_result = 0.0;
 	int n;
 	int thread_count;
 
