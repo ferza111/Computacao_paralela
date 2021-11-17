@@ -1,0 +1,1 @@
+o numero de threads deve ser menor ou igual a n;
