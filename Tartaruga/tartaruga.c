@@ -53,7 +53,7 @@ void Tartaruga (int n, double* global_result_p)
 	 for(i = my_rank; i<k; i++)
 	 {
 	   h = (double)i
-	   my_result = my_result+(1/i);
+	   my_result = my_result+(1/h);
 	 }
 	}
       # pragma omp critical
