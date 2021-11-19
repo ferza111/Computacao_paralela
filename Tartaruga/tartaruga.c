@@ -11,12 +11,13 @@ int main(int argc, char* argv[])
 	int thread_count;
 
 	thread_count = strtol(argv[1], NULL, 10);
-	scanf(&n);
+	printf("digite o valor de n: ");
+	scanf("%d",&n);
       # pragma omp parallel num_threads(thread_count)
 	Tartaruga(n, &global_result);
 
-	printf("With n = %d,our estimate\n",n);
-	printf("ln(n) = %d", global_result);
+	printf("com n = %d\n",n);
+	printf("ln(%d) = %f\n",n, global_result);
 	return 0;
 }
 
@@ -29,31 +30,32 @@ void Tartaruga (int n, double* global_result_p)
 	
 	my_result = 0;
 	j = n/thread_count;
-	k = my_rank*j;
-	m = n%thread_count;
-
-	if(my_rank == 1)
+	if(my_rank == 0)
 	{
-	 l = 1;
+		l = 1;
 	}
 	else
 	{
-	 l = (my_rank-1)*j;
+		l = (my_rank)*j;
 	}
+	
+	k = (my_rank+1)*j;
+	m = n%thread_count;
+	
 
-	if(my_rank == thread_count )
+	if(my_rank == thread_count-1)
 	{
-	 for(i = my_rank; i<k+m; i++)
+	 for(i = l; i<=k+m; i++)
 	 {
-	   h = (double)i;
+	   h = (double)i
 	   my_result = my_result+(1/h);
 	 }
 	}
 	else
 	{
-	 for(i = my_rank; i<k; i++)
+	 for(i = l; i<k; i++)
 	 {
-	   h = (double)i;
+	   h = (double)i
 	   my_result = my_result+(1/h);
 	 }
 	}
