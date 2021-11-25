@@ -1,3 +1,3 @@
 O programa funciona fazendo dividindo parte das somatoria em threads cada thread soma e soma em uma variavel global, o maior numero de threads que consegui executar foram 8250
 entretanto esse numero não era consistente, as vezes não era possivel executar o programa pois não foi possivel criar todas as threads, o numero de threads que consegui executar
-com consistencia foi 8200 threads.O maior valor de t que consegui executar foi de 
+com consistencia foi 8200 threads.O maior valor de t que consegui executar foi de 213646
